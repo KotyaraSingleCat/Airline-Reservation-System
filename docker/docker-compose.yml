@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  postgres:
+    container_name: airline-postgres
+    image: postgres:15.0
+    restart: always
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=airline-system
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./arline_system_init.sql:/docker-entrypoint-initdb.d/arline_system_init.sql
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: airline-pgadmin4
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: airline-plus@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - postgres
