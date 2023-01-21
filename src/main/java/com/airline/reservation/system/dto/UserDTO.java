@@ -2,9 +2,11 @@ package com.airline.reservation.system.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @Data
+@NoArgsConstructor
 public class UserDTO {
     private long id;
     private String name;
