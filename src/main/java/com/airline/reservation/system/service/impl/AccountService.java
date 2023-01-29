@@ -7,10 +7,12 @@ import com.airline.reservation.system.persistence.entity.Account;
 import com.airline.reservation.system.persistence.repository.AccountRepository;
 import com.airline.reservation.system.service.interfaces.AbstractAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AccountService implements AbstractAccountService {
 
     private final AccountRepository repository;
