@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+        <h:head>
+            <title>Airline-reservation system</title>
+        </h:head>
+        <h:body>
+            <h2 class="main-text">Airline-reservation system</h2>
+            <h:form>
+                <p:panel id="panel" header="Enter data" style="margin-bottom:10px;">
+                    <p:messages id="messages" />
+
+                    <h:panelGrid columns="2" cellpadding="8">
+                        <div>
+                        <!-- Listboxes-->
+                        <h:outputLabel for="from" value="From: " />
+                        <h:selectOneMenu id="from" required="true" label="From">
+                            <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="Spain" itemValue="1" />
+                            <f:selectItem itemLabel="Ukraine" itemValue="2" />
+                            <f:selectItem itemLabel="France" itemValue="3" />
+                        </h:selectOneMenu>
+                        <h:outputLabel for="to" value="To: " />
+                        <h:selectOneMenu id="to" required="true" label="From">
+                            <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
+                            <f:selectItem itemLabel="Spain" itemValue="1" />
+                            <f:selectItem itemLabel="Ukraine" itemValue="2" />
+                            <f:selectItem itemLabel="France" itemValue="3" />
+                        </h:selectOneMenu>
+                        </div>
+                        <div>
+                        <!-- Depature and arrival dates-->
+                        <p:outputLabel for="departureButton" value="Departure date:" />
+                        <p:datePicker id="departureButton" pattern="dd.MM.yyyy" showIcon="true"/>
+                        <p:outputLabel for="arrivalDateButton" value="Arrival date:" />
+                        <p:datePicker id="arrivalDateButton" pattern="dd.MM.yyyy" showIcon="true"/>
+                        </div>
+                    </h:panelGrid>
+                </p:panel>
+                <h:panelGrid columns="2">
+                    <p:commandButton update="@(form)" value="Accept" />
+                    <p:commandButton update="@(form)" value="Reset" />
+                </h:panelGrid>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
