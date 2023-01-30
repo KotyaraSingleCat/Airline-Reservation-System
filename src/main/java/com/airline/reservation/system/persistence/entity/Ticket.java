@@ -27,7 +27,4 @@ public class Ticket {
     @JoinColumn(name = "user_id")
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
-
-    @OneToOne(mappedBy = "ticket")
-    private Seat seat;
 }

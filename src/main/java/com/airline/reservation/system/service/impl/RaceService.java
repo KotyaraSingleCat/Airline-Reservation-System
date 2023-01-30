@@ -7,10 +7,12 @@ import com.airline.reservation.system.persistence.entity.Race;
 import com.airline.reservation.system.persistence.repository.RaceRepository;
 import com.airline.reservation.system.service.interfaces.AbstractRaceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class RaceService implements AbstractRaceService {
 
     private final RaceRepository repository;

@@ -7,10 +7,12 @@ import com.airline.reservation.system.persistence.entity.User;
 import com.airline.reservation.system.persistence.repository.UserRepository;
 import com.airline.reservation.system.service.interfaces.AbstractUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserService implements AbstractUserService {
 
     private final UserRepository repository;
