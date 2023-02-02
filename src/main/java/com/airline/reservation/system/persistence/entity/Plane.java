@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Table(name="planes")
 @Entity
@@ -24,7 +23,7 @@ public class Plane {
     @Column(name = "number", nullable=false, unique = true)
     private String number;
 
-    @OneToMany(mappedBy = "plane")
-    private List<Seat> seats;
+//    @OneToMany(mappedBy = "plane")
+//    private List<Seat> seats;
 
 }

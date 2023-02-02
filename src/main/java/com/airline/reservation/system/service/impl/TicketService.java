@@ -7,10 +7,12 @@ import com.airline.reservation.system.persistence.entity.Ticket;
 import com.airline.reservation.system.persistence.repository.TicketRepository;
 import com.airline.reservation.system.service.interfaces.AbstractTicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TicketService implements AbstractTicketService {
 
     private final TicketRepository repository;
