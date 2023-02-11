@@ -7,48 +7,38 @@
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-    <f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
-        <h:head>
-            <title>Airline-reservation system</title>
-        </h:head>
-        <h:body>
-            <h2 class="main-text">Airline-reservation system</h2>
-            <h:form>
-                <p:panel id="panel" header="Enter data" style="margin-bottom:10px;">
-                    <p:messages id="messages" />
 
-                    <h:panelGrid columns="2" cellpadding="8">
-                        <div>
-                        <!-- Listboxes-->
-                        <h:outputLabel for="from" value="From: " />
-                        <h:selectOneMenu id="from" required="true" label="From">
-                            <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
-                            <f:selectItem itemLabel="Spain" itemValue="1" />
-                            <f:selectItem itemLabel="Ukraine" itemValue="2" />
-                            <f:selectItem itemLabel="France" itemValue="3" />
-                        </h:selectOneMenu>
-                        <h:outputLabel for="to" value="To: " />
-                        <h:selectOneMenu id="to" required="true" label="From">
-                            <f:selectItem itemLabel="Select One" itemValue="" noSelectionOption="true" />
-                            <f:selectItem itemLabel="Spain" itemValue="1" />
-                            <f:selectItem itemLabel="Ukraine" itemValue="2" />
-                            <f:selectItem itemLabel="France" itemValue="3" />
-                        </h:selectOneMenu>
-                        </div>
-                        <div>
-                        <!-- Depature and arrival dates-->
-                        <p:outputLabel for="departureButton" value="Departure date:" />
-                        <p:datePicker id="departureButton" pattern="dd.MM.yyyy" showIcon="true"/>
-                        <p:outputLabel for="arrivalDateButton" value="Arrival date:" />
-                        <p:datePicker id="arrivalDateButton" pattern="dd.MM.yyyy" showIcon="true"/>
-                        </div>
-                    </h:panelGrid>
-                </p:panel>
-                <h:panelGrid columns="2">
-                    <p:commandButton update="@(form)" value="Accept" />
-                    <p:commandButton update="@(form)" value="Reset" />
-                </h:panelGrid>
-            </h:form>
-        </h:body>
-    </f:view>
+<f:view contentType="text/html;charset=UTF-8" encoding="UTF-8">
+    <h:head>
+        <h:outputStylesheet library="css" name="text-style.css"/>
+        <h:outputStylesheet library="webjars" name="primeflex/2.0.0/primeflex.min.css"/>
+        <title>Airline-reservation system</title>
+    </h:head>
+    <h:body>
+        <h2 class="main-text">Airline-reservation system</h2>
+        <h:form>
+            <p:panel header="Enter data" style="margin-bottom:10px;">
+                <p:panelGrid columns="4" layout="grid" columnClasses="p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3"
+                             styleClass="showcase-text-align-center">
+                    <p:outputLabel for="@next" style="float:right" value="From: " />
+                    <p:selectOneMenu id="from" value="#{helloWorld.country}" effect="fold" editable="true" filter="true">
+                        <f:selectItems value="#{helloWorld.countries}" />
+                    </p:selectOneMenu>
+                    <p:outputLabel for="@next" style="float:right" value="To: " />
+                    <p:selectOneMenu id="to" value="#{helloWorld.country}" effect="fold" editable="true" filter="true">
+                        <f:selectItems value="#{helloWorld.countries}" />
+                    </p:selectOneMenu>
+                    <h:outputText style="float:right" value="Departure date: "/>
+                    <p:datePicker pattern="dd.MM.yyyy" showIcon="true"/>
+                    <h:outputText style="float:right" value="Arrival date: "/>
+                    <p:datePicker pattern="dd.MM.yyyy" showIcon="true"/>
+                </p:panelGrid>
+            </p:panel>
+            <h:panelGrid columns="2">
+                <p:commandButton style="background: #f86901; border: #f86901" update="@(form)" value="Accept"/>
+                <p:commandButton style="background: #f86901; border: #f86901" update="@(form)" value="Reset"/>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</f:view>
 </html>

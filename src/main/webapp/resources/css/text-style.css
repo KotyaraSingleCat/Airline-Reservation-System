@@ -1,0 +1,20 @@
+.main-text {
+    font-family: verdana;
+    text-align: center;
+    font-size: 48px;
+    color: #fea405;
+    text-shadow: #f86901 3px 3px 3px;
+}
+
+.button-style {
+    background: #f86901;
+    border: #f86901;
+}
+
+.ui-button-icon {
+    background: #f86901;
+}
+
+.background-image-photo {
+    background-image:url(#{request.contextPath}/resources/images/background-img.jpg);
+}
