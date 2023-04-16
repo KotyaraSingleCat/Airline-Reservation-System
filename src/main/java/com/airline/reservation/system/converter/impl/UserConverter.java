@@ -6,6 +6,8 @@ import com.airline.reservation.system.dto.UserDTO;
 import com.airline.reservation.system.persistence.entity.Account;
 import com.airline.reservation.system.persistence.entity.User;
 
+import java.sql.Date;
+
 public class UserConverter implements AbstractConverter<User, UserDTO> {
     private final AbstractConverter<Account, AccountDTO> accountConverter;
 
@@ -20,6 +22,7 @@ public class UserConverter implements AbstractConverter<User, UserDTO> {
         user.setName(dto.getName());
         user.setSurname(dto.getSurname());
         user.setLastname(dto.getLastname());
+        user.setDate_of_birth(Date.valueOf(dto.getDate_of_birth()));
         user.setCard(dto.getCard());
         user.setAccount(accountConverter.convertDtoToEntity(dto.getAccountDTO()));
         return user;

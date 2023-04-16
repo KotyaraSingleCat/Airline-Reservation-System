@@ -13,32 +13,35 @@
         <h:outputStylesheet library="css" name="text-style.css"/>
         <h:outputStylesheet library="webjars" name="primeflex/2.0.0/primeflex.min.css"/>
         <title>Airline-reservation system</title>
+        <link rel = "icon" href ="#{request.contextPath}/resources/images/plane-ico.png"
+              type = "image/x-icon" />
     </h:head>
     <h:body>
         <h2 class="main-text">Airline-reservation system</h2>
-        <h:form>
+        <h:form id="form">
             <p:panel header="Enter data" style="margin-bottom:10px;">
                 <p:panelGrid columns="4" layout="grid" columnClasses="p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3, p-col-12 p-md-6 p-xl-3"
                              styleClass="showcase-text-align-center">
                     <p:outputLabel for="@next" style="float:right" value="From: " />
-                    <p:selectOneMenu id="from" value="#{helloWorld.country}" effect="fold" editable="true" filter="true">
+                    <p:selectOneMenu id="from" value="#{helloWorld.country}" effect="fold" editable="true" filter="true" label="!!!!!!!!!!!!!!">
                         <f:selectItems value="#{helloWorld.countries}" />
                     </p:selectOneMenu>
                     <p:outputLabel for="@next" style="float:right" value="To: " />
                     <p:selectOneMenu id="to" value="#{helloWorld.country}" effect="fold" editable="true" filter="true">
                         <f:selectItems value="#{helloWorld.countries}" />
                     </p:selectOneMenu>
-                    <h:outputText style="float:right" value="Departure date: "/>
+                    <p:outputLabel style="float:right" value="Departure date: "/>
                     <p:datePicker pattern="dd.MM.yyyy" showIcon="true"/>
-                    <h:outputText style="float:right" value="Arrival date: "/>
+                    <p:outputLabel style="float:right" value="Arrival date: "/>
                     <p:datePicker pattern="dd.MM.yyyy" showIcon="true"/>
                 </p:panelGrid>
             </p:panel>
             <h:panelGrid columns="2">
                 <p:commandButton style="background: #f86901; border: #f86901" update="@(form)" value="Accept"/>
-                <p:commandButton style="background: #f86901; border: #f86901" update="@(form)" value="Reset"/>
+                <p:commandButton style="background: #f86901; border: #f86901" action="#{helloWorld.reload()}" update=":form" value="Reset"/>
             </h:panelGrid>
         </h:form>
+        <ui:include src="races-list.xhtml" />
     </h:body>
 </f:view>
 </html>

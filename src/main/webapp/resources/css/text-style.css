@@ -1,9 +1,9 @@
 .main-text {
-    font-family: verdana;
+    font-family: verdana, serif;
     text-align: center;
     font-size: 48px;
-    color: #fea405;
-    text-shadow: #f86901 3px 3px 3px;
+    color: #ffffff;
+    text-shadow: #f86901 5px 5px 5px;
 }
 
 .button-style {
@@ -15,6 +15,23 @@
     background: #f86901;
 }
 
-.background-image-photo {
-    background-image:url(#{request.contextPath}/resources/images/background-img.jpg);
+html {
+    background:url(#{request.contextPath}/resources/images/plane.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
 }
+
+.ui-panel-content, .ui-panel-titlebar, .ui-panel-footer {
+    background: transparent !important;
+    border: none !important;
+}
+
+.ui-panelgrid {
+    opacity: 80% !important;
+}
+
+.ui-panel-title {
+    color: white;
+}
+
